@@ -27,8 +27,9 @@
   <!-- --- Header --- -->
   <header class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="#" class="logo">
-        <img src="logo.png" alt="MOVA Logo" class="logo-image">
+      <a href="#" class="logo" style="text-decoration: none; display: flex; align-items: center; gap: 6px;">
+        <iconify-icon icon="solar:square-academic-cap-2-linear" style="color: var(--color-primary); font-size: 26px;"></iconify-icon>
+        <span style="font-family: var(--font-display); font-weight: 800; font-size: 20px; color: var(--color-text-high); letter-spacing: -0.04em;">MOVA</span>
       </a>
 
       <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -41,7 +42,10 @@
         <a href="#about" class="nav-link">Про нас</a>
       </nav>
 
-      <div class="nav-actions">
+      <div class="nav-actions" style="display: flex; gap: var(--space-2); align-items: center;">
+        <button id="theme-toggle" class="btn btn-secondary btn-sm" aria-label="Toggle theme" style="padding: var(--space-2); min-width: unset; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-surface-border);">
+          <iconify-icon id="theme-icon" icon="solar:moon-linear" style="font-size: 1.2rem;"></iconify-icon>
+        </button>
         <a href="#contact" class="btn btn-primary btn-sm">Контакти</a>
       </div>
     </div>
@@ -62,14 +66,14 @@
         <div class="hero-content fade-in-up"
           style="max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center;">
           <h1 class="hero-title"
-            style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: var(--space-3); text-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: var(--space-3); text-shadow: var(--hero-text-shadow);">
             Вивчайте нідерландську <span style="color: var(--color-primary);">з комфортом</span></h1>
           <p class="hero-subtitle"
-            style="font-size: 1.15rem; max-width: 800px; margin-bottom: var(--space-8); text-shadow: 0 4px 10px rgba(0,0,0,0.5); line-height: 1.6;">
+            style="font-size: 1.15rem; max-width: 800px; margin-bottom: var(--space-8); text-shadow: var(--hero-subtitle-shadow); line-height: 1.6;">
             Індивідуальні онлайн-заняття для реалізації ваших цілей та швидкого результату.</p>
           <div class="hero-ctas" style="justify-content: center; text-align: center; width: 100%;">
             <a href="#contact" class="btn btn-primary"
-              style="font-size: 1.1rem; padding: var(--space-4) var(--space-8); box-shadow: 0 10px 30px rgba(235, 200, 152, 0.3);">
+              style="font-size: 1rem; padding: var(--space-3) var(--space-6); box-shadow: var(--btn-glow-large);">
               Отримати безкоштовний урок
             </a>
           </div>
@@ -185,8 +189,9 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <a href="#" class="logo">
-            <img src="images/logo.png" alt="MOVA Logo" class="logo-image">
+          <a href="#" class="logo" style="text-decoration: none; display: flex; align-items: center; gap: 6px;">
+            <iconify-icon icon="solar:square-academic-cap-2-linear" style="color: var(--color-primary); font-size: 26px;"></iconify-icon>
+            <span style="font-family: var(--font-display); font-weight: 800; font-size: 20px; color: var(--color-text-high); letter-spacing: -0.04em;">MOVA</span>
           </a>
         </div>
 
