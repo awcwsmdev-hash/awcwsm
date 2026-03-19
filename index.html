@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -12,8 +12,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800&family=Syne:wght@500;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800&family=Syne:wght@500;700;800&display=swap"
     rel="stylesheet">
+
 
   <!-- Icons -->
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
@@ -24,12 +25,17 @@
 
 <body>
 
+  <!-- Full-page animated books canvas background -->
+  <canvas id="letters-canvas" class="letters-canvas"></canvas>
+
   <!-- --- Header --- -->
   <header class="navbar" id="navbar">
     <div class="container nav-container">
       <a href="#" class="logo" style="text-decoration: none; display: flex; align-items: center; gap: 6px;">
-        <iconify-icon icon="solar:square-academic-cap-2-linear" style="color: var(--color-primary); font-size: 26px;"></iconify-icon>
-        <span style="font-family: var(--font-display); font-weight: 800; font-size: 20px; color: var(--color-text-high); letter-spacing: -0.04em;">MOVA</span>
+        <iconify-icon icon="solar:square-academic-cap-2-linear"
+          style="color: var(--color-primary); font-size: 26px;"></iconify-icon>
+        <span
+          style="font-family: var(--font-display); font-weight: 800; font-size: 20px; color: var(--color-text-high); letter-spacing: -0.04em;">MOVA</span>
       </a>
 
       <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -43,7 +49,8 @@
       </nav>
 
       <div class="nav-actions" style="display: flex; gap: var(--space-2); align-items: center;">
-        <button id="theme-toggle" class="btn btn-secondary btn-sm" aria-label="Toggle theme" style="padding: var(--space-2); min-width: unset; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-surface-border);">
+        <button id="theme-toggle" class="btn btn-secondary btn-sm" aria-label="Toggle theme"
+          style="padding: var(--space-2); min-width: unset; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-surface-border);">
           <iconify-icon id="theme-icon" icon="solar:moon-linear" style="font-size: 1.2rem;"></iconify-icon>
         </button>
         <a href="#contact" class="btn btn-primary btn-sm">Контакти</a>
@@ -190,8 +197,10 @@
       <div class="footer-content">
         <div class="footer-brand">
           <a href="#" class="logo" style="text-decoration: none; display: flex; align-items: center; gap: 6px;">
-            <iconify-icon icon="solar:square-academic-cap-2-linear" style="color: var(--color-primary); font-size: 26px;"></iconify-icon>
-            <span style="font-family: var(--font-display); font-weight: 800; font-size: 20px; color: var(--color-text-high); letter-spacing: -0.04em;">MOVA</span>
+            <iconify-icon icon="solar:square-academic-cap-2-linear"
+              style="color: var(--color-primary); font-size: 26px;"></iconify-icon>
+            <span
+              style="font-family: var(--font-display); font-weight: 800; font-size: 20px; color: var(--color-text-high); letter-spacing: -0.04em;">MOVA</span>
           </a>
         </div>
 
