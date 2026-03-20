@@ -97,59 +97,54 @@
 }
 
 :root[data-theme="light"] {
-  --color-bg-deep: #F6F8FA;
-  /* Snow white */
-  --color-surface: rgba(255, 255, 255, 0.85);
-  /* Frosty glass */
-  --color-surface-hover: rgba(255, 255, 255, 0.95);
-  --color-surface-border: rgba(154, 188, 194, 0.3);
-  /* Icy blue border */
-  --color-surface-border-hover: rgba(115, 158, 105, 0.5);
-  /* Sage green border on hover */
+  --color-bg-deep: #FFFCF2;
+  /* Creamy Off-white */
+  --color-surface: rgba(206, 223, 217, 0.4);
+  /* Soft Mint Glass */
+  --color-surface-hover: rgba(206, 223, 217, 0.6);
+  --color-surface-border: rgba(151, 180, 166, 0.3);
+  /* Sage green border */
+  --color-surface-border-hover: rgba(151, 180, 166, 0.5);
 
-  --color-primary: #2D3E31;
-  /* Deep Forest Green for high contrast CTAs */
-  --color-primary-hover: #1A261D;
-  /* Darker Forest Green */
-  --color-primary-transparent: rgba(115, 158, 105, 0.15);
-  /* Sage green transparent for badges/accents */
+  --color-primary: #97B4A6;
+  /* Sage Green */
+  --color-primary-hover: #7E9B8D;
+  /* Darker Sage */
+  --color-primary-transparent: rgba(151, 180, 166, 0.15);
 
-  --color-text-high: #2D3E31;
-  /* Deep Forest Green */
-  --color-text-muted: #617766;
-  /* Desaturated Sage/Forest mix */
+  --color-text-high: #3D4A42;
+  /* Deep Sage for better contrast */
+  --color-text-muted: #6E7F75;
+  /* Muted Sage */
 
-  --bg-nav-scrolled: rgba(246, 248, 250, 0.85);
+  --bg-nav-scrolled: rgba(255, 252, 242, 0.85);
   --bg-glow-hero: none;
-  --bg-card-gradient: rgba(255, 255, 255, 0.9);
-  --card-border-color: rgba(154, 188, 194, 0.25);
-  --card-shadow-heavy: 0 8px 30px rgba(45, 62, 49, 0.08);
-  /* Soft forest shadow */
-  --card-shadow-hover: 0 12px 40px rgba(115, 158, 105, 0.15), inset 0 0 15px rgba(255, 255, 255, 0.9);
+  --bg-card-gradient: rgba(255, 255, 255, 0.7);
+  --card-border-color: rgba(151, 180, 166, 0.25);
+  --card-shadow-heavy: 0 8px 30px rgba(151, 180, 166, 0.08);
+  --card-shadow-hover: 0 12px 40px rgba(151, 180, 166, 0.15), inset 0 0 15px rgba(255, 255, 255, 0.9);
   --input-bg: rgba(255, 255, 255, 0.7);
   --input-bg-focus: rgba(255, 255, 255, 1);
-  --input-border: rgba(154, 188, 194, 0.4);
-  /* Icy blue input border */
-  --input-placeholder: rgba(97, 119, 102, 0.6);
+  --input-border: rgba(151, 180, 166, 0.4);
+  --input-placeholder: rgba(110, 127, 117, 0.6);
 
   /* Background Orbs */
-  --orb-1-bg: rgba(115, 158, 105, 0.25);
-  /* Sage green orb */
-  --orb-2-bg: rgba(154, 188, 194, 0.35);
-  /* Icy blue orb */
-  --orb-3-bg: rgba(45, 62, 49, 0.1);
-  /* Deep green orb */
+  --orb-1-bg: rgba(243, 230, 217, 0.5);
+  /* Peach orb */
+  --orb-2-bg: rgba(211, 204, 211, 0.4);
+  /* Lavender orb */
+  --orb-3-bg: rgba(206, 223, 217, 0.4);
+  /* Mint orb */
 
-  --btn-shadow: 0 4px 14px rgba(45, 62, 49, 0.2);
-  --btn-shadow-hover: 0 6px 20px rgba(45, 62, 49, 0.3);
-  --scrollbar-thumb: rgba(154, 188, 194, 0.5);
-  --scrollbar-thumb-hover: rgba(115, 158, 105, 0.6);
-  --glass-shadow: 0 8px 32px rgba(45, 62, 49, 0.04);
+  --btn-shadow: 0 4px 14px rgba(151, 180, 166, 0.2);
+  --btn-shadow-hover: 0 6px 20px rgba(151, 180, 166, 0.3);
+  --scrollbar-thumb: rgba(151, 180, 166, 0.5);
+  --scrollbar-thumb-hover: rgba(151, 180, 166, 0.6);
+  --glass-shadow: 0 8px 32px rgba(151, 180, 166, 0.04);
 
-  --hero-text-shadow: 0 8px 25px rgba(115, 158, 105, 0.15);
-  /* Soft sage glow */
+  --hero-text-shadow: 0 8px 25px rgba(151, 180, 166, 0.1);
   --hero-subtitle-shadow: none;
-  --btn-glow-large: 0 10px 30px rgba(45, 62, 49, 0.2);
+  --btn-glow-large: 0 10px 30px rgba(151, 180, 166, 0.2);
 }
 
 /* Reset & Base Styles */
