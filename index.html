@@ -58,76 +58,145 @@
 
   <main>
     <!-- --- Hero Section --- -->
-    <section id="hero" class="hero section" style="position: relative; overflow: hidden; padding: 200px 0 150px;">
-      <!-- Enhanced Cinematic Soft Gradient Background -->
+    <section id="hero" class="hero section">
       <div class="hero-cinematic-bg">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
         <div class="orb orb-3"></div>
       </div>
 
-      <div class="container hero-container"
-        style="display: flex; justify-content: center; text-align: center; position: relative; z-index: 2;">
-        <div class="hero-content fade-in-up"
-          style="max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center;">
-          <h1 class="hero-title"
-            style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: var(--space-3); text-shadow: var(--hero-text-shadow);">
-            Вивчайте нідерландську <span style="color: var(--color-primary);">з комфортом</span></h1>
-          <p class="hero-subtitle"
-            style="font-size: 1.15rem; max-width: 800px; margin-bottom: var(--space-8); text-shadow: var(--hero-subtitle-shadow); line-height: 1.6;">
-            Індивідуальні онлайн-заняття для реалізації ваших цілей та швидкого результату.</p>
-          <div class="hero-ctas" style="justify-content: center; text-align: center; width: 100%;">
-            <a href="#contact" class="btn btn-primary"
-              style="font-size: 1rem; padding: var(--space-3) var(--space-6); box-shadow: var(--btn-glow-large);">
+      <div class="container hero-container">
+        
+        <div class="hero-content fade-in-up">
+          <h1 class="hero-title">
+            Вивчайте нідерландську <br><span style="color: var(--color-primary);">з комфортом</span>
+          </h1>
+          <p class="hero-subtitle">
+            Індивідуальні онлайн-заняття для реалізації ваших цілей та швидкого результату. Почніть свій шлях до вільного спілкування вже сьогодні.
+          </p>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn btn-primary">
               Отримати безкоштовний урок
             </a>
+            <a href="#features" class="btn btn-secondary">
+              Детальніше
+            </a>
+          </div>
+        </div>
+
+        <!-- NEW IMAGE CARDS AREA -->
+        <div class="hero-image-cards fade-in-up delay-1">
+           <div class="image-card glass-card card-left">
+              <img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?q=80&w=600&auto=format&fit=crop" alt="Студенти" class="learning-img">
+              <div class="image-card-caption">
+                <iconify-icon icon="solar:video-frame-bold-duotone"></iconify-icon>
+                <span>Живі онлайн сесії</span>
+              </div>
+           </div>
+
+           <div class="image-card glass-card card-center">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Навчальний процес" class="learning-img">
+              <div class="image-card-caption">
+                <iconify-icon icon="solar:chat-round-check-bold-duotone"></iconify-icon>
+                <span>Розмовна практика</span>
+              </div>
+           </div>
+
+           <div class="image-card glass-card card-right">
+              <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Матеріали" class="learning-img">
+              <div class="image-card-caption">
+                <iconify-icon icon="solar:book-bookmark-bold-duotone"></iconify-icon>
+                <span>Сучасні матеріали</span>
+              </div>
+           </div>
+        </div>
+
+
+
+      </div>
+    </section>
+
+    <!-- --- Lesson Flow Roadmap --- -->
+    <section class="lesson-flow section">
+      <div class="container flow-container">
+        <div class="flow-header fade-in-up">
+          <div class="badge">СТРУКТУРА ЗАНЯТТЯ</div>
+          <h2 class="flow-title">Глибоке занурення в урок</h2>
+          <p class="flow-subtitle">60 хвилин інтенсивної та результативної практики</p>
+        </div>
+
+        <div class="roadmap-wrapper left-line-layout">
+          <!-- SVG for the straight thick line -->
+          <svg class="roadmap-svg-line" viewBox="0 0 20 1000" preserveAspectRatio="none">
+            <path d="M 10 0 L 10 1000" fill="none" class="path-bg" stroke-width="6" />
+            <path id="roadmap-active-path" d="M 10 0 L 10 1000" fill="none" class="path-active" stroke-width="6" />
+          </svg>
+          
+          <div class="roadmap-steps left-aligned-steps">
+            <!-- Step 1 -->
+            <div class="roadmap-step fade-in-up" data-step="1">
+              <div class="roadmap-node">
+                <iconify-icon icon="solar:cup-hot-bold-duotone"></iconify-icon>
+              </div>
+              <div class="roadmap-content glass-card">
+                <span class="step-time">5 хв</span>
+                <h4 class="step-label">Знайомство</h4>
+                <p class="step-info">Налаштування на урок та перевірка цілей.</p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="roadmap-step fade-in-up delay-1" data-step="2">
+              <div class="roadmap-node">
+                <iconify-icon icon="solar:history-bold-duotone"></iconify-icon>
+              </div>
+              <div class="roadmap-content glass-card">
+                <span class="step-time">10 хв</span>
+                <h4 class="step-label">Рев'ю</h4>
+                <p class="step-info">Повторення минулих тем через живі діалоги.</p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="roadmap-step fade-in-up delay-2" data-step="3">
+              <div class="roadmap-node">
+                <iconify-icon icon="solar:notebook-bold-duotone"></iconify-icon>
+              </div>
+              <div class="roadmap-content glass-card">
+                <span class="step-time">20 хв</span>
+                <h4 class="step-label">Занурення</h4>
+                <p class="step-info">Нова граматика та лексика в контексті реальних ситуацій.</p>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="roadmap-step fade-in-up delay-3" data-step="4">
+              <div class="roadmap-node">
+                <iconify-icon icon="solar:microphone-3-bold-duotone"></iconify-icon>
+              </div>
+              <div class="roadmap-content glass-card">
+                <span class="step-time">20 хв</span>
+                <h4 class="step-label">Speaking Lab</h4>
+                <p class="step-info">Максимум практики мовлення без страху помилок.</p>
+              </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="roadmap-step fade-in-up delay-4" data-step="5">
+              <div class="roadmap-node">
+                <iconify-icon icon="solar:target-bold-duotone"></iconify-icon>
+              </div>
+              <div class="roadmap-content glass-card">
+                <span class="step-time">5 хв</span>
+                <h4 class="step-label">Підсумки</h4>
+                <p class="step-info">Зворотний зв'язок та план вашого успіху на тиждень.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- --- Features Section --- -->
-    <section id="features" class="features section">
-      <div class="container">
-        <div class="section-header fade-in-up">
-          <h2 class="section-title">Сучасний підхід до вивчення мови</h2>
-          <p class="section-subtitle">Забудьте про застарілі підручники. Наша імерсивна методологія зосереджена на
-            практичному використанні, правильній вимові та реальному застосуванні.</p>
-        </div>
-
-        <div class="features-grid">
-          <!-- Feature 1 -->
-          <article class="feature-card glass-card fade-in-up delay-1">
-            <div class="feature-icon-wrapper">
-              <iconify-icon icon="solar:users-group-two-rounded-linear" class="feature-icon"></iconify-icon>
-            </div>
-            <h3 class="feature-title">Персоналізована програма</h3>
-            <p class="feature-desc">Кожен урок адаптується до вашого поточного рівня, цілей та інтересів, забезпечуючи
-              максимальне залучення та запам'ятовування.</p>
-          </article>
-
-          <!-- Feature 2 -->
-          <article class="feature-card glass-card fade-in-up delay-2">
-            <div class="feature-icon-wrapper">
-              <iconify-icon icon="solar:notebook-linear" class="feature-icon"></iconify-icon>
-            </div>
-            <h3 class="feature-title">Постійний зворотний зв'язок</h3>
-            <p class="feature-desc">Отримуйте конструктивні виправлення вимови та граматики в режимі реального часу в
-              дружній атмосфері.</p>
-          </article>
-
-          <!-- Feature 3 -->
-          <article class="feature-card glass-card fade-in-up delay-3">
-            <div class="feature-icon-wrapper">
-              <iconify-icon icon="solar:calendar-date-linear" class="feature-icon"></iconify-icon>
-            </div>
-            <h3 class="feature-title">Гнучкий графік</h3>
-            <p class="feature-desc">Бронюйте уроки в зручний для вас час. Легко переносьте заняття за допомогою нашого
-              сучасного студентського порталу.</p>
-          </article>
-        </div>
-      </div>
-    </section>
 
 
     <!-- --- CTA Section --- -->

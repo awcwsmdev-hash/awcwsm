@@ -175,4 +175,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 7. Roadmap Interaction Logic
+    const initRoadmap = () => {
+        const steps = document.querySelectorAll('.roadmap-step');
+        const activePath = document.getElementById('roadmap-active-path');
+        if (!steps.length || !activePath) return;
+
+        // Set initial path state (hidden)
+        const pathLength = activePath.getTotalLength();
+        activePath.style.strokeDasharray = pathLength;
+        activePath.style.strokeDashoffset = pathLength;
+
+        // Scroll Reveal Observer
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
+
+        steps.forEach((step, index) => {
+            revealObserver.observe(step);
+
+            // Hover for progress (using mouseenter)
+            step.addEventListener('mouseenter', () => {
+                const stepNum = parseInt(step.getAttribute('data-step'));
+                const totalSteps = steps.length;
+                
+                // Update path progress (percentage of path length)
+                const progressFactor = stepNum / totalSteps;
+                const offset = pathLength * (1 - progressFactor);
+                activePath.style.strokeDashoffset = offset;
+
+                // Update active states
+                steps.forEach(s => {
+                    const sNum = parseInt(s.getAttribute('data-step'));
+                    if (sNum <= stepNum) {
+                        s.classList.add('active');
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Initialize first step as active after small delay
+        setTimeout(() => {
+            if (steps[0]) steps[0].click();
+        }, 800);
+    };
+
+    initRoadmap();
+
 });
