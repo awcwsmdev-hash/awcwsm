@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" data-theme="teal">
 
 <head>
   <meta charset="UTF-8">
@@ -9,9 +9,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.3/dist/dotlottie-wc.js" type="module"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -77,22 +78,7 @@
         </div>
 
         <div class="hero__visual reveal">
-          <div class="hero__card hero__card--main">
-            <div class="hero__card-icon">
-              <iconify-icon icon="solar:diploma-bold-duotone"></iconify-icon>
-            </div>
-            <p class="hero__card-title">Staatsexamen NT2</p>
-            <p class="hero__card-sub">Programma I &amp; II</p>
-            <div class="hero__card-tag">Офіційний диплом</div>
-          </div>
-          <div class="hero__card hero__card--float hero__card--float-1">
-            <iconify-icon icon="solar:chat-round-check-bold-duotone"></iconify-icon>
-            <span>Розмовна практика</span>
-          </div>
-          <div class="hero__card hero__card--float hero__card--float-2">
-            <iconify-icon icon="solar:book-2-bold-duotone"></iconify-icon>
-            <span>Inburgering NT2</span>
-          </div>
+          <dotlottie-wc src="https://lottie.host/78a7e381-079f-4e92-bc8f-73f7f0d526d0/Ap3BBPTvmg.lottie" class="hero__lottie" autoplay loop></dotlottie-wc>
         </div>
       </div>
     </section>
@@ -380,44 +366,6 @@
     </div>
   </footer>
 
-  <!-- ========================
-       THEME SWITCHER
-  ========================== -->
-  <div class="theme-switcher" id="themeSwitcher">
-    <button class="theme-switcher__toggle" id="themeToggle" aria-label="Змінити тему">
-      <iconify-icon icon="solar:palette-bold-duotone"></iconify-icon>
-    </button>
-    <div class="theme-switcher__panel" id="themePanel">
-      <p class="theme-switcher__label">Оберіть тему</p>
-      <div class="theme-switcher__options">
-        <button class="theme-swatch theme-swatch--active" data-theme="teal" title="Teal — як Green Forest">
-          <span class="swatch-dark" style="background:#0D1F35"></span>
-          <span class="swatch-accent" style="background:#3CB391"></span>
-          <span class="swatch-name">Teal</span>
-        </button>
-        <button class="theme-swatch" data-theme="gold" title="Gold — преміальний">
-          <span class="swatch-dark" style="background:#1E1040"></span>
-          <span class="swatch-accent" style="background:#D4A843"></span>
-          <span class="swatch-name">Gold</span>
-        </button>
-        <button class="theme-swatch" data-theme="orange" title="Orange — bold">
-          <span class="swatch-dark" style="background:#181818"></span>
-          <span class="swatch-accent" style="background:#FF5E2C"></span>
-          <span class="swatch-name">Orange</span>
-        </button>
-        <button class="theme-swatch" data-theme="mint" title="Mint — нідерландський">
-          <span class="swatch-dark" style="background:#0B3D3A"></span>
-          <span class="swatch-accent" style="background:#4ECBA5"></span>
-          <span class="swatch-name">Mint</span>
-        </button>
-        <button class="theme-swatch" data-theme="sky" title="Sky — корпоративний">
-          <span class="swatch-dark" style="background:#1E293B"></span>
-          <span class="swatch-accent" style="background:#38BDF8"></span>
-          <span class="swatch-name">Sky</span>
-        </button>
-      </div>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>

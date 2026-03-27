@@ -121,42 +121,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { passive: true });
 
-  // ---- Theme Switcher ----
-  const themeToggle  = document.getElementById('themeToggle');
-  const themePanel   = document.getElementById('themePanel');
-  const swatches     = document.querySelectorAll('.theme-swatch');
-  const htmlEl       = document.documentElement;
-
-  // Restore saved theme
-  const savedTheme = localStorage.getItem('lingva-theme') || 'teal';
-  applyTheme(savedTheme);
-
-  themeToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    themePanel.classList.toggle('open');
-  });
-
-  // Close panel on outside click
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('#themeSwitcher')) {
-      themePanel.classList.remove('open');
-    }
-  });
-
-  swatches.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const theme = btn.dataset.theme;
-      applyTheme(theme);
-      localStorage.setItem('lingva-theme', theme);
-      themePanel.classList.remove('open');
-    });
-  });
-
-  function applyTheme(theme) {
-    htmlEl.dataset.theme = theme;
-    swatches.forEach(b => {
-      b.classList.toggle('theme-swatch--active', b.dataset.theme === theme);
-    });
-  }
 
 });
