@@ -1,231 +1,162 @@
-/**
- * Landing Page JavaScript
- */
-
-// Force page to top on reload (prevents browser from remembering scroll position)
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-}
-window.scrollTo(0, 0);
-
-window.addEventListener('beforeunload', function () {
-    window.scrollTo(0, 0);
-});
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Ensuring it scrolls up even if beforeunload failed
-    window.scrollTo(0, 0);
-    setTimeout(() => {
-        window.scrollTo(0, 0);
-    }, 50);
 
-    // 0. Theme Toggle Logic
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
+  // ---- Sticky Header ----
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
 
-    // Check saved theme or default to light (Olive Garden)
-    const savedTheme = localStorage.getItem('mova-theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    if (themeIcon) {
-        themeIcon.setAttribute('icon', savedTheme === 'light' ? 'solar:moon-linear' : 'solar:sun-linear');
+  // ---- Mobile Burger Menu ----
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('nav');
+
+  // Create mobile nav overlay
+  const mobileNav = document.createElement('nav');
+  mobileNav.className = 'mobile-nav';
+  mobileNav.innerHTML = `
+    <a href="#about"    class="nav__link">Про нас</a>
+    <a href="#services" class="nav__link">Послуги</a>
+    <a href="#pricing"  class="nav__link">Ціни</a>
+    <a href="#faq"      class="nav__link">FAQ</a>
+    <a href="#contact"  class="btn btn--primary">Безкоштовний урок</a>
+  `;
+  document.body.appendChild(mobileNav);
+
+  let menuOpen = false;
+  burger.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    mobileNav.classList.toggle('open', menuOpen);
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    // Animate burger lines
+    const spans = burger.querySelectorAll('span');
+    if (menuOpen) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    } else {
+      spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
     }
+  });
 
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('mova-theme', newTheme);
-
-            if (themeIcon) {
-                themeIcon.setAttribute('icon', newTheme === 'light' ? 'solar:moon-linear' : 'solar:sun-linear');
-            }
-        });
-    }
-
-    // 1. Sticky Navbar Effect
-    const navbar = document.getElementById('navbar');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
+  // Close on link click
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuOpen = false;
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+      burger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
     });
+  });
 
-    // 2. Intersection Observer for Scroll Animations
-    // Target all elements with .fade-in-up class
-    const fadeElements = document.querySelectorAll('.fade-in-up');
-
-    const observerOptions = {
-        root: null, // viewport
-        rootMargin: '0px 0px -100px 0px', // trigger when 100px from bottom screen
-        threshold: 0.1 // 10% visible
-    };
-
-    const scrollObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                // Optional: Stop observing once faded in to keep it visible
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    fadeElements.forEach(el => scrollObserver.observe(el));
-
-    // 3. Update Active Nav Link on Scroll
-    const sections = document.querySelectorAll('.section');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // 4. Mobile Menu Toggle 
-    const mobileBtn = document.querySelector('.mobile-menu-btn');
-    if (mobileBtn) {
-        mobileBtn.addEventListener('click', () => {
-            console.log('Mobile menu clicked');
-        });
-    }
-
-    // 5. FAQ Accordion Logic
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const isExpanded = question.getAttribute('aria-expanded') === 'true';
-            const answer = question.nextElementSibling;
-
-            // Close all currently open ones (optional, for accordion effect)
-            faqQuestions.forEach(q => {
-                q.setAttribute('aria-expanded', 'false');
-                q.nextElementSibling.style.maxHeight = null;
-            });
-
-            // Toggle current one
-            if (!isExpanded) {
-                question.setAttribute('aria-expanded', 'true');
-                answer.style.maxHeight = answer.scrollHeight + "px";
-            }
-        });
-    });
-
-    // 6. Custom Country Select Logic
-    const selectWrapper = document.getElementById('country-select');
-    if (selectWrapper) {
-        const selectTrigger = selectWrapper.querySelector('.custom-select-trigger');
-        const customOptions = selectWrapper.querySelectorAll('.custom-option');
-        const phoneInput = document.getElementById('phone-input');
-
-        // Toggle dropdown open/close
-        selectTrigger.addEventListener('click', (e) => {
-            selectWrapper.classList.toggle('open');
-            e.stopPropagation();
-        });
-
-        // Handle option selection
-        customOptions.forEach(option => {
-            option.addEventListener('click', function () {
-                // Update active state
-                customOptions.forEach(opt => opt.classList.remove('selected'));
-                this.classList.add('selected');
-
-                // Update Trigger UI
-                const newFlag = this.dataset.flag;
-                const newPrefix = this.dataset.value;
-                const newPlaceholder = this.dataset.placeholder;
-
-                selectTrigger.querySelector('.flag-icon').textContent = newFlag;
-                selectTrigger.querySelector('.prefix-text').textContent = newPrefix;
-
-                // Update Input Placeholder
-                if (phoneInput) {
-                    phoneInput.placeholder = newPlaceholder;
-                }
-
-                // Close dropdown
-                selectWrapper.classList.remove('open');
-            });
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!selectWrapper.contains(e.target)) {
-                selectWrapper.classList.remove('open');
-            }
-        });
-    }
-
-    // 7. Roadmap Interaction Logic
-    const initRoadmap = () => {
-        const steps = document.querySelectorAll('.roadmap-step');
-        const activePath = document.getElementById('roadmap-active-path');
-        if (!steps.length || !activePath) return;
-
-        // Set initial path state (hidden)
-        const pathLength = activePath.getTotalLength();
-        activePath.style.strokeDasharray = pathLength;
-        activePath.style.strokeDashoffset = pathLength;
-
-        // Scroll Reveal Observer
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                }
-            });
-        }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
-
-        steps.forEach((step, index) => {
-            revealObserver.observe(step);
-
-            // Hover for progress (using mouseenter)
-            step.addEventListener('mouseenter', () => {
-                const stepNum = parseInt(step.getAttribute('data-step'));
-                const totalSteps = steps.length;
-                
-                // Update path progress (percentage of path length)
-                const progressFactor = stepNum / totalSteps;
-                const offset = pathLength * (1 - progressFactor);
-                activePath.style.strokeDashoffset = offset;
-
-                // Update active states
-                steps.forEach(s => {
-                    const sNum = parseInt(s.getAttribute('data-step'));
-                    if (sNum <= stepNum) {
-                        s.classList.add('active');
-                    } else {
-                        s.classList.remove('active');
-                    }
-                });
-            });
-        });
-
-        // Initialize first step as active after small delay
+  // ---- Scroll Reveal ----
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        // Stagger siblings inside the same parent
+        const siblings = [...entry.target.parentElement.querySelectorAll('.reveal')];
+        const idx = siblings.indexOf(entry.target);
         setTimeout(() => {
-            if (steps[0]) steps[0].click();
-        }, 800);
-    };
+          entry.target.classList.add('visible');
+        }, idx * 80);
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
-    initRoadmap();
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // ---- FAQ Accordion ----
+  const faqItems = document.querySelectorAll('.faq__item');
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq__question');
+    const answer = item.querySelector('.faq__answer');
+
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+
+      // Close all
+      faqItems.forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq__answer').style.maxHeight = null;
+        i.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+      });
+
+      // Toggle current
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // ---- Form Submit ----
+  window.handleSubmit = function(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const original = btn.innerHTML;
+    btn.innerHTML = '✅ Заявка надіслана! Скоро зв\'яжемося з вами.';
+    btn.disabled = true;
+    btn.style.background = '#22C55E';
+    setTimeout(() => {
+      btn.innerHTML = original;
+      btn.disabled = false;
+      btn.style.background = '';
+      e.target.reset();
+    }, 4000);
+  };
+
+  // ---- Active Nav Link on Scroll ----
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav__link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+    });
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+    });
+  }, { passive: true });
+
+  // ---- Theme Switcher ----
+  const themeToggle  = document.getElementById('themeToggle');
+  const themePanel   = document.getElementById('themePanel');
+  const swatches     = document.querySelectorAll('.theme-swatch');
+  const htmlEl       = document.documentElement;
+
+  // Restore saved theme
+  const savedTheme = localStorage.getItem('lingva-theme') || 'teal';
+  applyTheme(savedTheme);
+
+  themeToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    themePanel.classList.toggle('open');
+  });
+
+  // Close panel on outside click
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#themeSwitcher')) {
+      themePanel.classList.remove('open');
+    }
+  });
+
+  swatches.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const theme = btn.dataset.theme;
+      applyTheme(theme);
+      localStorage.setItem('lingva-theme', theme);
+      themePanel.classList.remove('open');
+    });
+  });
+
+  function applyTheme(theme) {
+    htmlEl.dataset.theme = theme;
+    swatches.forEach(b => {
+      b.classList.toggle('theme-swatch--active', b.dataset.theme === theme);
+    });
+  }
 
 });
