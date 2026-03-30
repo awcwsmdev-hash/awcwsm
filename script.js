@@ -1,3 +1,18 @@
+// ---- Force Scroll to Top on Reload ----
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+// Remove hash from URL to prevent jumping to sections like #services
+if (window.location.hash) {
+  window.history.replaceState('', document.title, window.location.pathname + window.location.search);
+}
+
+window.scrollTo(0, 0);
+window.addEventListener('load', () => {
+  setTimeout(() => window.scrollTo(0, 0), 10);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Sticky Header ----
@@ -18,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <a href="#services" class="nav__link">Послуги</a>
     <a href="#pricing"  class="nav__link">Ціни</a>
     <a href="#faq"      class="nav__link">FAQ</a>
-    <a href="#contact"  class="btn btn--primary">Безкоштовний урок</a>
+    <a href="#contact"  class="nav__link">Безкоштовний урок</a>
   `;
   document.body.appendChild(mobileNav);
 
@@ -121,5 +136,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { passive: true });
 
+  // ---- Theme Switcher ----
+  const themeDots = document.querySelectorAll('.theme-dot');
+  const root = document.documentElement;
+
+  const setTheme = (themeName) => {
+    root.setAttribute('data-theme', themeName);
+    localStorage.setItem('lingva-theme', themeName);
+    themeDots.forEach(dot => {
+      dot.classList.toggle('active', dot.getAttribute('data-theme') === themeName);
+    });
+  };
+
+  themeDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      setTheme(dot.getAttribute('data-theme'));
+    });
+  });
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem('lingva-theme') || 'mint';
+  setTheme(savedTheme);
 
 });
