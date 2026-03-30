@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="uk" data-theme="mint">
+<html lang="uk" data-theme="indigo">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lingva — Нідерландська мова онлайн</title>
-  <meta name="description" content="Індивідуальні онлайн-уроки нідерландської мови. Підготовка до Inburgering та NT2. Перший урок — безкоштовно.">
+  <meta name="description"
+    content="Індивідуальні онлайн-уроки нідерландської мови. Підготовка до Inburgering та NT2. Перший урок — безкоштовно.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <link rel="stylesheet" href="style.css">
@@ -25,7 +28,7 @@
       <nav class="nav" id="nav">
         <a href="#about" class="nav__link">Про нас</a>
         <a href="#services" class="nav__link">Послуги</a>
-        <a href="#pricing" class="nav__link">Ціни</a>
+        <a href="#contact" class="nav__link">Безкоштовний урок</a>
         <a href="#faq" class="nav__link">FAQ</a>
         <a href="#contact" class="nav__link">Безкоштовний урок</a>
       </nav>
@@ -40,12 +43,12 @@
   <main>
 
     <!-- HERO -->
-    <section class="hero" id="home">
+    <section class="hero" id="hero">
       <div class="hero-mesh"></div>
-      <div class="container container--narrow">
+      <div class="container hero__inner">
         <div class="hero__content">
           <h1 class="hero__title reveal">
-            Вивчай <span class="highlight">нідерландську</span> з комфортом
+            Вивчай <span class="hero__title-accent">нідерландську</span> з комфортом
           </h1>
           <p class="hero__subtitle reveal">
             Індивідуальні онлайн-заняття. Від 0 до B2 за рік. Підготовка до Inburgering та NT2.
@@ -59,11 +62,15 @@
           <div class="hero__stats reveal">
             <div class="hero__stat">
               <span class="hero__stat-value">B2</span>
-              <span class="hero__stat-label">Підтверджений рівень</span>
+              <span class="hero__stat-label">підтверджений рівень</span>
             </div>
             <div class="hero__stat">
               <span class="hero__stat-value">2+</span>
-              <span class="hero__stat-label">Роки досвіду</span>
+              <span class="hero__stat-label">роки досвіду</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-value">100%</span>
+              <span class="hero__stat-label">індивідуально</span>
             </div>
           </div>
         </div>
@@ -74,6 +81,7 @@
     <section class="about section" id="about">
       <div class="container">
         <div class="section-header reveal">
+          <span class="section-tag">01 — Про нас</span>
           <h2 class="section-title">Ми знаємо, як це — вчити з нуля</h2>
           <p class="section-subtitle">Тому що самі це пережили та допоможемо тобі пройти цей шлях швидше</p>
         </div>
@@ -97,14 +105,16 @@
               <iconify-icon icon="solar:lightbulb-bold-duotone"></iconify-icon>
             </div>
             <h3 class="about__card-title">Жодної "води"</h3>
-            <p class="about__card-text">Пояснюємо складну граматику просто і без зазубрювання. Лише практичні знання.</p>
+            <p class="about__card-text">Пояснюємо складну граматику просто і без зазубрювання. Лише практичні знання.
+            </p>
           </div>
           <div class="about__card reveal">
             <div class="about__card-icon">
               <iconify-icon icon="solar:city-bold-duotone"></iconify-icon>
             </div>
             <h3 class="about__card-title">Розуміємо контекст</h3>
-            <p class="about__card-text">Допомагаємо зрозуміти систему освіти, іспити Inburgering та життя в Нідерландах.</p>
+            <p class="about__card-text">Допомагаємо зрозуміти систему освіти, іспити Inburgering та життя в Нідерландах.
+            </p>
           </div>
         </div>
       </div>
@@ -114,13 +124,14 @@
     <section class="services section" id="services">
       <div class="container">
         <div class="section-header reveal">
+          <span class="section-tag">02 — Як навчаємо</span>
           <h2 class="section-title">З чого складається урок?</h2>
           <p class="section-subtitle">Максимум розмовної практики та ефективний розподіл часу</p>
         </div>
-        
+
         <div class="donut-section reveal">
           <div class="donut-container">
-            
+
             <!-- Left: SVG Chart -->
             <div class="donut-chart-wrapper">
               <svg class="donut-svg" viewBox="0 0 42 42">
@@ -128,181 +139,90 @@
                 <g transform="rotate(-90 21 21)">
                   <!-- Background Track -->
                   <circle cx="21" cy="21" r="15.915494309" class="donut-track" />
-                  
+
                   <!-- Segments (values represent percentage out of 100 circumference) -->
                   <!-- 30% Говоріння -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg" style="--val: 29; --gap: 71; --offset: 0;" />
+                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg"
+                    style="--val: 29; --gap: 71; --offset: 0; stroke: #6366F1;" />
                   <!-- 15% Слухання -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg" style="--val: 14; --gap: 86; --offset: -30;" />
+                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg"
+                    style="--val: 14; --gap: 86; --offset: -30; stroke: #818CF8;" />
                   <!-- 15% Граматика -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg" style="--val: 14; --gap: 86; --offset: -45;" />
+                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg"
+                    style="--val: 14; --gap: 86; --offset: -45; stroke: #A5B4FC;" />
                   <!-- 15% Лексика -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg" style="--val: 14; --gap: 86; --offset: -60;" />
+                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg"
+                    style="--val: 14; --gap: 86; --offset: -60; stroke: #C7D2FE;" />
                   <!-- 10% Читання -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg" style="--val: 9; --gap: 91; --offset: -75;" />
+                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg"
+                    style="--val: 9; --gap: 91; --offset: -75; stroke: #E0E7FF;" />
                   <!-- 5% Вправи -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg" style="--val: 4; --gap: 96; --offset: -85;" />
+                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg"
+                    style="--val: 4; --gap: 96; --offset: -85; stroke: #94A3B8;" />
                   <!-- 5% Ігри -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg" style="--val: 4; --gap: 96; --offset: -90;" />
+                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg"
+                    style="--val: 4; --gap: 96; --offset: -90; stroke: #64748B;" />
                   <!-- 5% Відео -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg" style="--val: 4; --gap: 96; --offset: -95;" />
+                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg"
+                    style="--val: 4; --gap: 96; --offset: -95; stroke: #475569;" />
                 </g>
               </svg>
               <!-- Center absolute text -->
               <div class="donut-center-text" style="font-size: 36px;">60 хв<br><span>Урок</span></div>
             </div>
-            
+
             <!-- Right: Beautiful HUD Legend -->
             <div class="donut-legend">
-              <div class="d-leg-item"><div class="d-leg-color"></div> <span class="d-leg-name">Говоріння</span> <span class="d-leg-val">18 хв</span></div>
-              <div class="d-leg-item"><div class="d-leg-color"></div> <span class="d-leg-name">Слухання</span> <span class="d-leg-val">9 хв</span></div>
-              <div class="d-leg-item"><div class="d-leg-color"></div> <span class="d-leg-name">Граматика</span> <span class="d-leg-val">9 хв</span></div>
-              <div class="d-leg-item"><div class="d-leg-color"></div> <span class="d-leg-name">Лексика</span> <span class="d-leg-val">9 хв</span></div>
-              <div class="d-leg-item"><div class="d-leg-color"></div> <span class="d-leg-name">Читання</span> <span class="d-leg-val">6 хв</span></div>
-              <div class="d-leg-item"><div class="d-leg-color"></div> <span class="d-leg-name">Вправи</span> <span class="d-leg-val">3 хв</span></div>
-              <div class="d-leg-item"><div class="d-leg-color"></div> <span class="d-leg-name">Ігри</span> <span class="d-leg-val">3 хв</span></div>
-              <div class="d-leg-item"><div class="d-leg-color"></div> <span class="d-leg-name">Відео</span> <span class="d-leg-val">3 хв</span></div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section class="pricing section" id="pricing">
-      <div class="container">
-        <div class="section-header reveal">
-          <h2 class="section-title">Прозорі ціни, без сюрпризів</h2>
-          <p class="section-subtitle">Ніяких прихованих оплат — просто якісне навчання за чесною ціною</p>
-        </div>
-        <div class="pricing__cards">
-          <div class="pricing__card reveal">
-            <div class="pricing__card-head">
-              <div class="pricing__card-badge">Для початку</div>
-              <div class="pricing__card-price">
-                <span class="pricing__price-value">0€</span>
+              <div class="d-leg-item">
+                <div class="d-leg-color" style="background:#6366F1; box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);"></div> <span
+                  class="d-leg-name">Говоріння</span> <span class="d-leg-val">18 хв</span>
               </div>
-              <h3 class="pricing__card-title">Пробне заняття</h3>
-              <p class="pricing__card-desc">Знайомство, консультація та визначення рівня. Повністю безкоштовно та без зобов'язань.</p>
-            </div>
-            <div class="pricing__divider"></div>
-            <div class="pricing__card-body">
-              <ul class="pricing__card-features">
-                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon> Знайомство та визначення рівня</li>
-                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon> Обговорення твоїх цілей</li>
-                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon> Індивідуальний план навчання</li>
-              </ul>
-              <a href="#contact" class="btn btn--outline btn--full">Записатися безкоштовно</a>
-            </div>
-          </div>
-          <div class="pricing__card pricing__card--featured reveal">
-            <div class="pricing__card-head">
-              <div class="pricing__card-badge pricing__card-badge--accent">Основний</div>
-              <div class="pricing__card-price">
-                <span class="pricing__price-value">20€</span>
-                <span class="pricing__price-period">/ 60 хв</span>
+              <div class="d-leg-item">
+                <div class="d-leg-color" style="background:#818CF8"></div> <span class="d-leg-name">Слухання</span>
+                <span class="d-leg-val">9 хв</span>
               </div>
-              <h3 class="pricing__card-title">Стандартне заняття</h3>
-              <p class="pricing__card-desc">Повноцінний урок за індивідуальною програмою з авторськими матеріалами.</p>
+              <div class="d-leg-item">
+                <div class="d-leg-color" style="background:#A5B4FC"></div> <span class="d-leg-name">Граматика</span>
+                <span class="d-leg-val">9 хв</span>
+              </div>
+              <div class="d-leg-item">
+                <div class="d-leg-color" style="background:#C7D2FE"></div> <span class="d-leg-name">Лексика</span> <span
+                  class="d-leg-val">9 хв</span>
+              </div>
+              <div class="d-leg-item">
+                <div class="d-leg-color" style="background:#E0E7FF"></div> <span class="d-leg-name">Читання</span> <span
+                  class="d-leg-val">6 хв</span>
+              </div>
+              <div class="d-leg-item">
+                <div class="d-leg-color" style="background:#94A3B8"></div> <span class="d-leg-name">Вправи</span> <span
+                  class="d-leg-val">3 хв</span>
+              </div>
+              <div class="d-leg-item">
+                <div class="d-leg-color" style="background:#64748B"></div> <span class="d-leg-name">Ігри</span> <span
+                  class="d-leg-val">3 хв</span>
+              </div>
+              <div class="d-leg-item">
+                <div class="d-leg-color" style="background:#475569"></div> <span class="d-leg-name">Відео</span> <span
+                  class="d-leg-val">3 хв</span>
+              </div>
             </div>
-            <div class="pricing__divider"></div>
-            <div class="pricing__card-body">
-              <ul class="pricing__card-features">
-                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon> Індивідуальна програма</li>
-                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon> Авторські матеріали</li>
-                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon> Домашнє завдання</li>
-                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon> Зворотній зв'язок після уроку</li>
-              </ul>
-              <a href="#contact" class="btn btn--primary btn--full">Записатися на урок</a>
-            </div>
+
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq section" id="faq">
-      <div class="container">
-        <div class="section-header reveal">
-          <h2 class="section-title">Маєте запитання?</h2>
-        </div>
-        <div class="faq__list">
-          <div class="faq__item reveal">
-            <button class="faq__question" aria-expanded="false">
-              З якого рівня можна починати?
-              <iconify-icon icon="solar:alt-arrow-down-linear" class="faq__icon"></iconify-icon>
-            </button>
-            <div class="faq__answer">
-              <p>З будь-якого. Беремо студентів від абсолютних початківців (A0) до просунутих рівнів (B2+). На пробному уроці визначимо твій рівень і побудуємо відповідну програму.</p>
-            </div>
-          </div>
-          <div class="faq__item reveal">
-            <button class="faq__question" aria-expanded="false">
-              Де проходять заняття?
-              <iconify-icon icon="solar:alt-arrow-down-linear" class="faq__icon"></iconify-icon>
-            </button>
-            <div class="faq__answer">
-              <p>Всі уроки проходять онлайн через Zoom або Google Meet. Потрібен лише комп'ютер або планшет і стабільний інтернет.</p>
-            </div>
-          </div>
-          <div class="faq__item reveal">
-            <button class="faq__question" aria-expanded="false">
-              Чи можна перенести або скасувати урок?
-              <iconify-icon icon="solar:alt-arrow-down-linear" class="faq__icon"></iconify-icon>
-            </button>
-            <div class="faq__answer">
-              <p>Так, урок можна перенести або скасувати безкоштовно за умови попередження за 24 години.</p>
-            </div>
-          </div>
-          <div class="faq__item reveal">
-            <button class="faq__question" aria-expanded="false">
-              Скільки часу займе підготовка до NT2?
-              <iconify-icon icon="solar:alt-arrow-down-linear" class="faq__icon"></iconify-icon>
-            </button>
-            <div class="faq__answer">
-              <p>Залежить від початкового рівня та інтенсивності занять. Зазвичай від 3 до 12 місяців. На консультації дамо точнішу оцінку.</p>
-            </div>
-          </div>
-          <div class="faq__item reveal">
-            <button class="faq__question" aria-expanded="false">
-              Яку мову ви використовуєте на уроках?
-              <iconify-icon icon="solar:alt-arrow-down-linear" class="faq__icon"></iconify-icon>
-            </button>
-            <div class="faq__answer">
-              <p>Для початківців — українську та нідерландську. Поступово збільшуємо частку нідерландської мови у міру твого прогресу.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- CONTACT -->
+  <!-- CONTACT -->
     <section class="contact section" id="contact">
       <div class="container">
         <div class="contact__inner reveal">
           <div class="contact__content">
-            <h2 class="contact__title">
-              Твій перший урок —<br>
-              <span>безкоштовно</span>
-            </h2>
+            <span class="section-tag contact__tag">03 — Записатися</span>
+            <h2 class="contact__title">Записатися на <span class="highlight">пробний урок</span></h2>
             <p class="contact__subtitle">Залиште заявку і ми зв'яжемося з вами для узгодження часу.</p>
-            <div class="contact__info">
-              <div class="contact__info-item">
-                <iconify-icon icon="solar:clock-bold-duotone"></iconify-icon>
-                <span>30 хвилин безкоштовно</span>
-              </div>
-              <div class="contact__info-item">
-                <iconify-icon icon="solar:video-frame-bold-duotone"></iconify-icon>
-                <span>Онлайн через Zoom або Meet</span>
-              </div>
-              <div class="contact__info-item">
-                <iconify-icon icon="solar:shield-check-bold-duotone"></iconify-icon>
-                <span>Без зобов'язань</span>
-              </div>
-            </div>
           </div>
-          <form class="contact__form" id="contactForm" onsubmit="handleSubmit(event)">
+          <form class="contact__form" id="contactForm" onsubmit="window.handleSubmit(event)">
             <div class="form__row">
               <div class="form__group">
                 <label class="form__label">Ім'я</label>
@@ -332,11 +252,71 @@
                 <option>B1 — Середній</option>
               </select>
             </div>
-            <button type="submit" class="btn btn--primary btn--full">
-              <iconify-icon icon="solar:calendar-add-bold-duotone"></iconify-icon>
-              Записатися на безкоштовний урок
+            <button type="submit" class="btn btn--primary btn--full btn--lg">
+              Записатися на пробний урок
             </button>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq section" id="faq">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">04 — Питання</span>
+          <h2 class="section-title">Маєте запитання?</h2>
+        </div>
+        <div class="faq__list">
+          <div class="faq__item reveal">
+            <button class="faq__question" aria-expanded="false">
+              З якого рівня можна починати?
+              <iconify-icon icon="solar:alt-arrow-down-linear" class="faq__icon"></iconify-icon>
+            </button>
+            <div class="faq__answer">
+              <p>З будь-якого. Беремо студентів від абсолютних початківців (A0) до просунутих рівнів (B2+). На пробному
+                уроці визначимо твій рівень і побудуємо відповідну програму.</p>
+            </div>
+          </div>
+          <div class="faq__item reveal">
+            <button class="faq__question" aria-expanded="false">
+              Де проходять заняття?
+              <iconify-icon icon="solar:alt-arrow-down-linear" class="faq__icon"></iconify-icon>
+            </button>
+            <div class="faq__answer">
+              <p>Всі уроки проходять онлайн через Zoom або Google Meet. Потрібен лише комп'ютер або планшет і стабільний
+                інтернет.</p>
+            </div>
+          </div>
+          <div class="faq__item reveal">
+            <button class="faq__question" aria-expanded="false">
+              Чи можна перенести або скасувати урок?
+              <iconify-icon icon="solar:alt-arrow-down-linear" class="faq__icon"></iconify-icon>
+            </button>
+            <div class="faq__answer">
+              <p>Так, урок можна перенести або скасувати безкоштовно за умови попередження за 24 години.</p>
+            </div>
+          </div>
+          <div class="faq__item reveal">
+            <button class="faq__question" aria-expanded="false">
+              Скільки часу займе підготовка до NT2?
+              <iconify-icon icon="solar:alt-arrow-down-linear" class="faq__icon"></iconify-icon>
+            </button>
+            <div class="faq__answer">
+              <p>Залежить від початкового рівня та інтенсивності занять. Зазвичай від 3 до 12 місяців. На консультації
+                дамо точнішу оцінку.</p>
+            </div>
+          </div>
+          <div class="faq__item reveal">
+            <button class="faq__question" aria-expanded="false">
+              Яку мову ви використовуєте на уроках?
+              <iconify-icon icon="solar:alt-arrow-down-linear" class="faq__icon"></iconify-icon>
+            </button>
+            <div class="faq__answer">
+              <p>Для початківців — українську та нідерландську. Поступово збільшуємо частку нідерландської мови у міру
+                твого прогресу.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -371,16 +351,7 @@
 
 
 
-  <div class="theme-picker" id="themePicker">
-    <div class="theme-dot active" data-theme="indigo" title="Ocean Deep"></div>
-    <div class="theme-dot" data-theme="rose" title="Berry Night"></div>
-    <div class="theme-dot" data-theme="emerald" title="Midnight Emerald"></div>
-    <div class="theme-dot" data-theme="amber" title="Sunset Amber"></div>
-    <div class="theme-dot" data-theme="luxe" title="Luxe White"></div>
-    <div class="theme-dot" data-theme="lavender" title="Soft Lavender"></div>
-    <div class="theme-dot" data-theme="sakura" title="Sakura Blush"></div>
-  </div>
-
   <script src="script.js"></script>
 </body>
+
 </html>

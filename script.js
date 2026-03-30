@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---- Form Submit ----
-  window.handleSubmit = function(e) {
+  window.handleSubmit = function (e) {
     e.preventDefault();
     const btn = e.target.querySelector('button[type="submit"]');
     const original = btn.innerHTML;
@@ -135,27 +135,5 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
     });
   }, { passive: true });
-
-  // ---- Theme Switcher ----
-  const themeDots = document.querySelectorAll('.theme-dot');
-  const root = document.documentElement;
-
-  const setTheme = (themeName) => {
-    root.setAttribute('data-theme', themeName);
-    localStorage.setItem('lingva-theme', themeName);
-    themeDots.forEach(dot => {
-      dot.classList.toggle('active', dot.getAttribute('data-theme') === themeName);
-    });
-  };
-
-  themeDots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      setTheme(dot.getAttribute('data-theme'));
-    });
-  });
-
-  // Load saved theme
-  const savedTheme = localStorage.getItem('lingva-theme') || 'mint';
-  setTheme(savedTheme);
 
 });
