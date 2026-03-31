@@ -358,7 +358,7 @@ strong { color: var(--clr-text); }
   position: relative;
   padding: 140px 0 120px;
   /* Smooth transition to the next section's background */
-  background: linear-gradient(180deg, var(--clr-hero-bg) 0%, var(--clr-hero-bg) 60%, var(--clr-surface) 100%);
+  background: var(--clr-hero-bg);
   color: var(--clr-hero-text);
   display: flex;
   align-items: center;
@@ -532,7 +532,7 @@ strong { color: var(--clr-text); }
 /* ============================================
    ABOUT — light section, GF layout style
    ============================================ */
-.about { background: var(--clr-surface); padding: 100px 0; }
+.about { background: var(--clr-bg); padding: 100px 0; }
 
 .about__grid {
   display: grid;
@@ -599,7 +599,7 @@ strong { color: var(--clr-text); }
   align-items: flex-start;
   gap: 40px;
   padding: 40px;
-  background: var(--clr-surface);
+  background: var(--clr-bg);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-lg);
   transition: all var(--dur) var(--ease);
@@ -770,7 +770,7 @@ strong { color: var(--clr-text); }
 /* ============================================
    FAQ — light
    ============================================ */
-.faq { background: var(--clr-surface); padding: 100px 0; }
+.faq { background: var(--clr-bg); padding: 100px 0; }
 
 .faq__list {
   max-width: 780px;
@@ -957,7 +957,7 @@ strong { color: var(--clr-text); }
    FOOTER
    ============================================ */
 .footer {
-  background: var(--clr-surface);
+  background: var(--clr-bg);
   border-top: 1px solid var(--clr-border);
   padding: 60px 0 0;
 }
@@ -1254,7 +1254,7 @@ strong { color: var(--clr-text); }
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  background: var(--clr-surface);
+  background: var(--clr-bg);
   padding: 40px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--clr-border);
