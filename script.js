@@ -30,10 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
   mobileNav.className = 'mobile-nav';
   mobileNav.innerHTML = `
     <a href="#about"    class="nav__link">Про нас</a>
-    <a href="#services" class="nav__link">Послуги</a>
+    <a href="#how"      class="nav__link">Як це працює</a>
     <a href="#pricing"  class="nav__link">Ціни</a>
-    <a href="#faq"      class="nav__link">FAQ</a>
     <a href="#contact"  class="nav__link">Безкоштовний урок</a>
+    <a href="#faq"      class="nav__link">FAQ</a>
   `;
   document.body.appendChild(mobileNav);
 
@@ -65,12 +65,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Scroll Reveal ----
   const revealEls = document.querySelectorAll('.reveal');
+
+  // Pre-compute sibling indices once to avoid DOM queries inside the observer callback
+  const revealIndexMap = new Map();
+  revealEls.forEach(el => {
+    const siblings = [...el.parentElement.querySelectorAll('.reveal')];
+    revealIndexMap.set(el, siblings.indexOf(el));
+  });
+
   const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Stagger siblings inside the same parent
-        const siblings = [...entry.target.parentElement.querySelectorAll('.reveal')];
-        const idx = siblings.indexOf(entry.target);
+        const idx = revealIndexMap.get(entry.target) || 0;
         setTimeout(() => {
           entry.target.classList.add('visible');
         }, idx * 80);
@@ -126,10 +132,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav__link');
 
+  // Cache section offsets to avoid layout reflow on every scroll event
+  let sectionOffsets = [];
+  function updateSectionOffsets() {
+    sectionOffsets = [...sections].map(sec => ({ id: sec.id, top: sec.offsetTop }));
+  }
+  updateSectionOffsets();
+  window.addEventListener('resize', updateSectionOffsets, { passive: true });
+
   window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
     let current = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+    sectionOffsets.forEach(({ id, top }) => {
+      if (scrollY >= top - 120) current = id;
     });
     navLinks.forEach(link => {
       link.classList.toggle('active', link.getAttribute('href') === `#${current}`);

@@ -10,11 +10,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
 
-  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,7 +26,8 @@
       </a>
       <nav class="nav" id="nav">
         <a href="#about" class="nav__link">Про нас</a>
-        <a href="#services" class="nav__link">Послуги</a>
+        <a href="#how" class="nav__link">Як це працює</a>
+        <a href="#pricing" class="nav__link">Ціни</a>
         <a href="#contact" class="nav__link">Безкоштовний урок</a>
         <a href="#faq" class="nav__link">FAQ</a>
       </nav>
@@ -50,26 +50,26 @@
             Вивчай <span class="hero__title-accent">нідерландську</span> з комфортом
           </h1>
           <p class="hero__subtitle reveal">
-            Індивідуальні онлайн-заняття. Від 0 до B2 за рік. Підготовка до Inburgering та NT2.
+            Індивідуальні онлайн-заняття. Підготовка до Inburgering та NT2.
           </p>
           <div class="hero__ctas reveal">
             <a href="#contact" class="btn btn--primary btn--lg">
-              <iconify-icon icon="solar:calendar-add-bold-duotone"></iconify-icon>
               Спробувати безкоштовно
             </a>
+            <p class="hero__cta-note">Без оплати. Без зобов'язань.</p>
           </div>
           <div class="hero__stats reveal">
             <div class="hero__stat">
-              <span class="hero__stat-value">B2</span>
-              <span class="hero__stat-label">підтверджений рівень</span>
+              <div class="hero__stat-img"></div>
+              <span class="hero__stat-label">Подорожі</span>
             </div>
             <div class="hero__stat">
-              <span class="hero__stat-value">2+</span>
-              <span class="hero__stat-label">роки досвіду</span>
+              <div class="hero__stat-img"></div>
+              <span class="hero__stat-label">Викладач</span>
             </div>
             <div class="hero__stat">
-              <span class="hero__stat-value">100%</span>
-              <span class="hero__stat-label">індивідуально</span>
+              <div class="hero__stat-img"></div>
+              <span class="hero__stat-label">Робота</span>
             </div>
           </div>
         </div>
@@ -119,139 +119,209 @@
       </div>
     </section>
 
-    <!-- LESSON COMPOSITION: ORBITAL NODES -->
-    <section class="services section" id="services">
+    <!-- HOW IT WORKS -->
+    <section class="steps section" id="how">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-tag">02 — Як навчаємо</span>
-          <h2 class="section-title">З чого складається урок?</h2>
-          <p class="section-subtitle">Максимум розмовної практики та ефективний розподіл часу</p>
+          <span class="section-tag">02 — Перший крок</span>
+          <h2 class="section-title">Як це працює?</h2>
+          <p class="section-subtitle">Від заявки до першого уроку — три простих кроки</p>
         </div>
-
-        <div class="donut-section reveal">
-          <div class="donut-container">
-
-            <!-- Left: SVG Chart -->
-            <div class="donut-chart-wrapper">
-              <svg class="donut-svg" viewBox="0 0 42 42">
-                <!-- Rotate -90deg so 0% starts exactly at top (12 o'clock) -->
-                <g transform="rotate(-90 21 21)">
-                  <!-- Background Track -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-track" />
-
-                  <!-- Segments (values represent percentage out of 100 circumference) -->
-                  <!-- 30% Говоріння -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg"
-                    style="--val: 29; --gap: 71; --offset: 0; stroke: #6366F1;" />
-                  <!-- 15% Слухання -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg"
-                    style="--val: 14; --gap: 86; --offset: -30; stroke: #818CF8;" />
-                  <!-- 15% Граматика -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg"
-                    style="--val: 14; --gap: 86; --offset: -45; stroke: #A5B4FC;" />
-                  <!-- 15% Лексика -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg"
-                    style="--val: 14; --gap: 86; --offset: -60; stroke: #C7D2FE;" />
-                  <!-- 10% Читання -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg"
-                    style="--val: 9; --gap: 91; --offset: -75; stroke: #E0E7FF;" />
-                  <!-- 5% Вправи -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg"
-                    style="--val: 4; --gap: 96; --offset: -85; stroke: #94A3B8;" />
-                  <!-- 5% Ігри -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg"
-                    style="--val: 4; --gap: 96; --offset: -90; stroke: #64748B;" />
-                  <!-- 5% Відео -->
-                  <circle cx="21" cy="21" r="15.915494309" class="donut-seg"
-                    style="--val: 4; --gap: 96; --offset: -95; stroke: #475569;" />
-                </g>
-              </svg>
-              <!-- Center absolute text -->
-              <div class="donut-center-text" style="font-size: 36px;">60 хв<br><span>Урок</span></div>
+        <div class="steps__grid">
+          <div class="steps__item reveal">
+            <div class="steps__num">01</div>
+            <div class="steps__body">
+              <div class="steps__icon"><iconify-icon icon="solar:document-add-bold-duotone"></iconify-icon></div>
+              <h3 class="steps__title">Залишаєш заявку</h3>
+              <p class="steps__text">Заповнюєш форму на сайті або пишеш у Telegram. Займе менше хвилини.</p>
             </div>
-
-            <!-- Right: Beautiful HUD Legend -->
-            <div class="donut-legend">
-              <div class="d-leg-item">
-                <div class="d-leg-color" style="background:#6366F1; box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);"></div> <span
-                  class="d-leg-name">Говоріння</span> <span class="d-leg-val">18 хв</span>
-              </div>
-              <div class="d-leg-item">
-                <div class="d-leg-color" style="background:#818CF8"></div> <span class="d-leg-name">Слухання</span>
-                <span class="d-leg-val">9 хв</span>
-              </div>
-              <div class="d-leg-item">
-                <div class="d-leg-color" style="background:#A5B4FC"></div> <span class="d-leg-name">Граматика</span>
-                <span class="d-leg-val">9 хв</span>
-              </div>
-              <div class="d-leg-item">
-                <div class="d-leg-color" style="background:#C7D2FE"></div> <span class="d-leg-name">Лексика</span> <span
-                  class="d-leg-val">9 хв</span>
-              </div>
-              <div class="d-leg-item">
-                <div class="d-leg-color" style="background:#E0E7FF"></div> <span class="d-leg-name">Читання</span> <span
-                  class="d-leg-val">6 хв</span>
-              </div>
-              <div class="d-leg-item">
-                <div class="d-leg-color" style="background:#94A3B8"></div> <span class="d-leg-name">Вправи</span> <span
-                  class="d-leg-val">3 хв</span>
-              </div>
-              <div class="d-leg-item">
-                <div class="d-leg-color" style="background:#64748B"></div> <span class="d-leg-name">Ігри</span> <span
-                  class="d-leg-val">3 хв</span>
-              </div>
-              <div class="d-leg-item">
-                <div class="d-leg-color" style="background:#475569"></div> <span class="d-leg-name">Відео</span> <span
-                  class="d-leg-val">3 хв</span>
-              </div>
+          </div>
+          <div class="steps__item reveal">
+            <div class="steps__num">02</div>
+            <div class="steps__body">
+              <div class="steps__icon"><iconify-icon icon="solar:chat-round-dots-bold-duotone"></iconify-icon></div>
+              <h3 class="steps__title">Обговорюємо цілі</h3>
+              <p class="steps__text">Зв'язуємося з тобою, визначаємо рівень та складаємо індивідуальний план.</p>
             </div>
-
+          </div>
+          <div class="steps__item reveal">
+            <div class="steps__num">03</div>
+            <div class="steps__body">
+              <div class="steps__icon"><iconify-icon icon="solar:star-shine-bold-duotone"></iconify-icon></div>
+              <h3 class="steps__title">Пробний урок</h3>
+              <p class="steps__text">Перший урок — безкоштовно. Без оплати та жодних зобов'язань.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
 
-  <!-- CONTACT -->
+
+    <!-- PRICING -->
+    <section class="pricing section" id="pricing">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">03 — Ціни</span>
+          <h2 class="section-title">Вартість занять</h2>
+          <p class="section-subtitle">Прозорі ціни без прихованих платежів</p>
+        </div>
+        <!-- Tabs -->
+        <div class="pricing__tabs reveal">
+          <button class="pricing__tab pricing__tab--active" data-tab="solo">Індивідуально</button>
+          <button class="pricing__tab" data-tab="duo">Дуо</button>
+        </div>
+
+        <!-- Індивідуально -->
+        <div class="pricing__panel pricing__panel--active" id="pricing-solo">
+          <div class="pricing__grid pricing__grid--3">
+
+            <!-- Разовий урок -->
+            <div class="pricing__card--new reveal">
+              <div class="pricing__card-label">Разовий урок</div>
+              <div class="pricing__card-price">
+                <span class="pricing__price-num">€25</span>
+                <span class="pricing__price-per">/ урок</span>
+              </div>
+              <p class="pricing__card-desc2">Підходить щоб спробувати або опрацювати конкретну тему.</p>
+              <ul class="pricing__features">
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Онлайн через Zoom або Google
+                  Meet</li>
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Матеріали включені</li>
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Перенесення за 24 години</li>
+              </ul>
+              <a href="#contact" class="btn btn--outline btn--full">Записатися</a>
+            </div>
+
+            <!-- Пакет 8 уроків -->
+            <div class="pricing__card--new pricing__card--pop reveal">
+              <div class="pricing__pop-badge">Найпопулярніше</div>
+              <div class="pricing__card-label">Пакет 8 уроків</div>
+              <div class="pricing__card-price">
+                <span class="pricing__price-num">€22.50</span>
+                <span class="pricing__price-per">/ урок</span>
+              </div>
+              <div class="pricing__price-row">
+                <span class="pricing__price-old">€25 / урок</span>
+                <span class="pricing__savings-badge">−10% · економія €20</span>
+              </div>
+              <p class="pricing__per-lesson">Разом: €180 за 8 уроків</p>
+              <p class="pricing__card-desc2">Оптимальний вибір для стабільного прогресу та підготовки до іспиту.</p>
+              <ul class="pricing__features">
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Онлайн через Zoom або Google
+                  Meet</li>
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Матеріали включені</li>
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Перенесення за 24 години</li>
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Індивідуальна програма</li>
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Домашні завдання з перевіркою
+                </li>
+              </ul>
+              <a href="#contact" class="btn btn--primary btn--full">Спробувати безкоштовно</a>
+            </div>
+
+            <!-- Пакет 16 уроків -->
+            <div class="pricing__card--new pricing__card--best reveal">
+              <div class="pricing__pop-badge pricing__pop-badge--green">Найвигідніше</div>
+              <div class="pricing__card-label">Пакет 16 уроків</div>
+              <div class="pricing__card-price">
+                <span class="pricing__price-num">€20</span>
+                <span class="pricing__price-per">/ урок</span>
+              </div>
+              <div class="pricing__price-row">
+                <span class="pricing__price-old">€25 / урок</span>
+                <span class="pricing__savings-badge pricing__savings-badge--green">−20% · економія €80</span>
+              </div>
+              <p class="pricing__per-lesson">Разом: €320 за 16 уроків</p>
+              <p class="pricing__card-desc2">Максимальна економія для тих, хто серйозно налаштований на результат.</p>
+              <ul class="pricing__features">
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Онлайн через Zoom або Google
+                  Meet</li>
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Матеріали включені</li>
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Перенесення за 24 години</li>
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Індивідуальна програма</li>
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Домашні завдання з перевіркою
+                </li>
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Пріоритетний вибір часу</li>
+              </ul>
+              <a href="#contact" class="btn btn--primary btn--full">Записатися</a>
+            </div>
+
+          </div>
+        </div><!-- /pricing__panel--solo -->
+
+        <!-- Дуо -->
+        <div class="pricing__panel" id="pricing-duo">
+          <div class="pricing__grid pricing__grid--1">
+
+            <!-- Дуо разовий -->
+            <div class="pricing__card--new reveal">
+              <div class="pricing__card-label">Дуо урок · 2 учасники</div>
+              <div class="pricing__card-price">
+                <span class="pricing__price-num">€15</span>
+                <span class="pricing__price-per">/ особа</span>
+              </div>
+              <p class="pricing__card-desc2">Навчайтеся разом з другом чи партнером — кожне заняття 60 хвилин.</p>
+              <ul class="pricing__features">
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Онлайн через Zoom або Google
+                  Meet</li>
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Матеріали включені</li>
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Перенесення за 24 години</li>
+                <li><iconify-icon icon="solar:check-circle-bold-duotone"></iconify-icon>Індивідуальна програма для пари
+                </li>
+              </ul>
+              <a href="#contact" class="btn btn--outline btn--full">Записатися</a>
+            </div>
+
+          </div>
+        </div><!-- /pricing__panel--duo -->
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section class="contact section" id="contact">
       <div class="container">
         <div class="contact__inner reveal">
           <div class="contact__content">
-            <span class="section-tag contact__tag">03 — Записатися</span>
+            <span class="section-tag contact__tag">04 — Записатися</span>
             <h2 class="contact__title">Записатися на <span class="highlight">пробний урок</span></h2>
             <p class="contact__subtitle">Залиште заявку і ми зв'яжемося з вами для узгодження часу.</p>
           </div>
           <form class="contact__form" id="contactForm" onsubmit="window.handleSubmit(event)">
             <div class="form__row">
               <div class="form__group">
-                <label class="form__label">Ім'я</label>
-                <input class="form__input" type="text" placeholder="Ваше ім'я" required>
+                <label class="form__label" for="firstName">Ім'я</label>
+                <input class="form__input" id="firstName" name="firstName" type="text" placeholder="Ваше ім'я"
+                  autocomplete="given-name" required>
               </div>
               <div class="form__group">
-                <label class="form__label">Прізвище</label>
-                <input class="form__input" type="text" placeholder="Ваше прізвище" required>
+                <label class="form__label" for="lastName">Прізвище</label>
+                <input class="form__input" id="lastName" name="lastName" type="text" placeholder="Ваше прізвище"
+                  autocomplete="family-name" required>
               </div>
             </div>
             <div class="form__group">
-              <label class="form__label">Номер телефону</label>
+              <label class="form__label" for="phoneNumber">Номер телефону</label>
               <div class="form__phone">
-                <select class="form__input form__phone-code" id="phoneCode">
+                <select class="form__input form__phone-code" id="phoneCode" name="phoneCode">
                   <option value="+31">🇳🇱 +31</option>
                   <option value="+380">🇺🇦 +380</option>
                 </select>
-                <input class="form__input form__phone-number" type="tel" placeholder="000 000 0000" required>
+                <input class="form__input form__phone-number" id="phoneNumber" name="phone" type="tel"
+                  placeholder="000 000 0000" autocomplete="tel-national" required>
               </div>
             </div>
             <div class="form__group">
-              <label class="form__label">Ваш рівень нідерландської</label>
-              <select class="form__input form__select" required>
+              <label class="form__label" for="level">Ваш рівень нідерландської</label>
+              <select class="form__input form__select" id="level" name="level" required>
                 <option value="" disabled selected>Оберіть рівень...</option>
-                <option>A0 — Повний початківець</option>
-                <option>A1–A2 — Базовий</option>
-                <option>B1 — Середній</option>
+                <option value="a0">A0 — Початківець</option>
+                <option value="a1">A1 — Елементарний</option>
+                <option value="a2">A2 — Базовий</option>
+                <option value="b1">B1 — Середній</option>
               </select>
             </div>
-            <button type="submit" class="btn btn--primary btn--full btn--lg">
+            <button type="submit" class="btn btn--primary btn--lg btn--contact-submit">
               Записатися на пробний урок
             </button>
           </form>
@@ -263,7 +333,7 @@
     <section class="faq section" id="faq">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-tag">04 — Питання</span>
+          <span class="section-tag">05 — Питання</span>
           <h2 class="section-title">Маєте запитання?</h2>
         </div>
         <div class="faq__list">
@@ -331,7 +401,8 @@
       <nav class="footer__nav">
         <h4 class="footer__nav-title">Навігація</h4>
         <a href="#about" class="footer__link">Про нас</a>
-        <a href="#services" class="footer__link">Послуги</a>
+        <a href="#how" class="footer__link">Як це працює</a>
+        <a href="#services" class="footer__link">Структура уроку</a>
         <a href="#pricing" class="footer__link">Ціни</a>
         <a href="#faq" class="footer__link">FAQ</a>
         <a href="#contact" class="footer__link">Контакти</a>
@@ -339,7 +410,8 @@
       <div class="footer__contact">
         <h4 class="footer__nav-title">Контакти</h4>
         <a href="mailto:hello@lingva.nl" class="footer__link">hello@lingva.nl</a>
-        <a href="https://t.me/lingva_nl" class="footer__link" target="_blank">Telegram: @lingva_nl</a>
+        <a href="https://t.me/lingva_nl" class="footer__link" target="_blank" rel="noopener noreferrer">Telegram:
+          @lingva_nl</a>
       </div>
     </div>
     <div class="footer__bottom">
@@ -350,7 +422,73 @@
 
 
 
+  <a href="https://t.me/lingva_nl" class="tg-float" target="_blank" rel="noopener noreferrer"
+    aria-label="Написати в Telegram">
+    <iconify-icon icon="logos:telegram"></iconify-icon>
+    <span class="tg-float__label">Написати в Telegram</span>
+  </a>
+
   <script src="script.js"></script>
+  <script>
+    // Pricing tabs with animation
+    (function () {
+      var switching = false;
+      document.querySelectorAll('.pricing__tab').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          if (switching) return;
+          var target = this.dataset.tab;
+          var currentPanel = document.querySelector('.pricing__panel--active:not(.pricing__panel--leaving)');
+          var nextPanel = document.getElementById('pricing-' + target);
+
+          if (!nextPanel || currentPanel === nextPanel) return;
+          switching = true;
+
+          // Update tab buttons
+          document.querySelectorAll('.pricing__tab').forEach(function (t) {
+            t.classList.remove('pricing__tab--active');
+          });
+          this.classList.add('pricing__tab--active');
+
+          // Reset reveal on next panel cards (prepare hidden state)
+          nextPanel.querySelectorAll('.reveal').forEach(function (el) {
+            el.classList.remove('visible');
+          });
+
+          // Lock container height to prevent layout shift during transition
+          var panelsContainer = nextPanel.parentElement;
+          panelsContainer.style.minHeight = panelsContainer.offsetHeight + 'px';
+
+          // Animate out current panel, then atomically swap to next
+          var delay = 0;
+          if (currentPanel) {
+            currentPanel.classList.add('pricing__panel--leaving');
+            delay = 280;
+          }
+
+          setTimeout(function () {
+            if (currentPanel) {
+              currentPanel.classList.remove('pricing__panel--active', 'pricing__panel--leaving');
+            }
+            nextPanel.classList.add('pricing__panel--active');
+
+            // Stagger reveal cards
+            nextPanel.querySelectorAll('.reveal').forEach(function (el, i) {
+              setTimeout(function () {
+                el.classList.add('visible');
+              }, 60 + i * 120);
+            });
+
+            // Release height lock after panel finishes animating in
+            setTimeout(function () {
+              panelsContainer.style.minHeight = '';
+            }, 500);
+
+            switching = false;
+          }, delay);
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>
